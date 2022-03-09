@@ -14,7 +14,6 @@ $.ajaxPrefilter(function(options) {
     // 控制跳转权限
     // complete 无论请求成功或失败都会调用
     options.complete = function(res) {
-        console.log(res);
         if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
             // 1.清空本地存储
             localStorage.removeItem('token')
